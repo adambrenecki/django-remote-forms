@@ -196,7 +196,11 @@ class RemoteTypedChoiceField(RemoteChoiceField):
         field_dict = super(RemoteTypedChoiceField, self).as_dict()
 
         field_dict.update({
-            'coerce': self.field.coerce,
+            # I'm not sure why this was included originally so I'm
+            # leaving it here as a comment, but coerce is typically
+            # a function that takes 1 argument, which resolve_promise
+            # isn't able to resolve into JSON.
+            #'coerce': self.field.coerce,
             'empty_value': self.field.empty_value
         })
 
