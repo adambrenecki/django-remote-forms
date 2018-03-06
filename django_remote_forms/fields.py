@@ -51,6 +51,10 @@ class RemoteField(object):
         return field_dict
 
 
+class RemoteUsernameField(RemoteField):
+    pass
+
+
 class RemoteCharField(RemoteField):
     def as_dict(self):
         field_dict = super(RemoteCharField, self).as_dict()
