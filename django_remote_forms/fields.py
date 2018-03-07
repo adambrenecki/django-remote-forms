@@ -184,7 +184,7 @@ class RemoteChoiceField(RemoteField):
         for key, value in self.field.choices:
             field_dict['choices'].append({
                 'value': key,
-                'display': value
+                'text': value
             })
 
         return field_dict
