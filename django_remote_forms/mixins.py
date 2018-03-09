@@ -10,4 +10,4 @@ class ExtraAttributesMixin:
         super().__init__(*args, **kwargs)
         for key, value in self.extra_attributes.items():
             field = self.fields.get(key)
-            field.extras = value
+            field.extra_attributes = value
