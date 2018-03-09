@@ -34,6 +34,12 @@ class RemoteField(object):
 
         field_dict['error_messages'] = self.field.error_messages
 
+        # Add extra attributes to the field_dict
+        try:
+            field_dict = {**field_dict, **self.field.extra_attributes}
+        except Exception:
+            print(f'no extra attributes for {field_dict["label"]}')
+
         # Instantiate the Remote Forms equivalent of the widget if possible
         # in order to retrieve the widget contents as a dictionary.
         remote_widget_class_name = 'Remote%s' % self.field.widget.__class__.__name__
