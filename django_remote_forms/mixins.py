@@ -4,10 +4,10 @@ class ExtraAttributesMixin:
     Value in the ``extra_attributes`` property will be added to the corresponding Key in fields dictionary
     property
     """
-    extras_attributes = {}
+    extra_attributes = {}
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        for key, value in self.extras_attributes.items():
+        for key, value in self.extra_attributes.items():
             field = self.fields.get(key)
             field.extras = value
